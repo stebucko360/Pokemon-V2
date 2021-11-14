@@ -23,24 +23,22 @@ describe('Trainer', ()=>{
     })
 
     describe('Method tests',()=>{
-        test.only('when catchpokemon is called, should push that pokemon into trainers pokemon array',()=>{
+        test('when catchpokemon is called, should push that pokemon into trainers pokemon array',()=>{
 
             const newTrainer = new Trainer('Ste', 31, 'Male');
-            newTrainer.catchPokemon('pikachu');
-            console.log(newTrainer.pokemon)
-
-            expect(newTrainer.pokemon).toEqual(['pikachu'])
+            return newTrainer.catchPokemon('pikachu');
+            
         })
         test('when catchpokemon is called and maximum pokemon number is met, should log "already at maximum pokemon"',()=>{
 
             const newTrainer = new Trainer('Ste', 31, 'Male');
-            newTrainer.catchPokemon('Pikachu');
-            newTrainer.catchPokemon('Blastoise');
-            newTrainer.catchPokemon('Charizard');
-            newTrainer.catchPokemon('Venusaur');
-            newTrainer.catchPokemon('MewTwo');
-            newTrainer.catchPokemon('Gengar');
-            newTrainer.catchPokemon('Mew');
+            newTrainer.catchPokemon('pikachu');
+            newTrainer.catchPokemon('blastoise');
+            newTrainer.catchPokemon('charizard');
+            newTrainer.catchPokemon('venusaur');
+            newTrainer.catchPokemon('mewTwo');
+            newTrainer.catchPokemon('gengar');
+            newTrainer.catchPokemon('mew');
 
             expect(newTrainer.pokemon.length).toBe(6);
         })
